@@ -1,0 +1,24 @@
+
+
+# Python virtual environment
+backend/venv/
+backend/.env
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+
+# General files to ignore
+*.log
+.DS_Store
+
+# Optional: Ignore VSCode settings
+.vscode/
+
+# Optional: Ignore Python or Node.js test coverage reports
+coverage/
+*.cover
+*.coverage
+*.coverage.*
+*.cov
+htmlcov/
