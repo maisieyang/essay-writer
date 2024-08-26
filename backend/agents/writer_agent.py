@@ -24,7 +24,18 @@ class WriterAgent:
             ),
             user_message
         ]
+
+        print("---------------------------WriterAgent Start-----------------------------------")
+        print("\n")
+        print("WriterAgent 输入:\n", messages)  # 打印输入状态
+        print("\n")
+        
         response = self.model.invoke(messages)
+
+  
+        print("PlanAgent 输出:\n", response.content)  # 打印输出状态
+        print("---------------------------WriterAgent end-----------------------------------")
+
         return {
             "draft": response.content, 
             "revision_number": state.get("revision_number", 1) + 1,

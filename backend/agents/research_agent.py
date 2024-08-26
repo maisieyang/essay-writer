@@ -16,13 +16,25 @@ class ResearchAgent:
                                      "最多生成三条搜索查询。")
     
     def run(self, state):
-        queries = self.model.with_structured_output(Queries).invoke([
-            SystemMessage(content=self.RESEARCH_PLAN_PROMPT),
-            HumanMessage(content=state['task'])
-        ])
+        input = [SystemMessage(content=self.RESEARCH_PLAN_PROMPT) , HumanMessage(content=state['task'])]
+     
+
+        print("---------------------------ResearchAgent-----------------------------------")
+        print("\n")
+        print("LLM 输入:\n", input) # 打印输入状态
+        queries = self.model.with_structured_output(Queries).invoke(input)
+        print("\n")
+        print("LLM 输出:\n", queries)  # 打印输出状态
+
         content = state['content'] or []  # add to content
+
+        print("\n")
+        print("tavily search 输出:\n", content)  # 打印输出状态
+
         for q in queries.queries:
             response = self.tavily.search(query=q, max_results=2)
             for r in response['results']:
                 content.append(r['content'])
         return {"content": content, "queries": queries.queries, "lnode": "research_plan", "count": 1}
+
+     

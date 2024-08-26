@@ -13,5 +13,11 @@ class PlanAgent:
             SystemMessage(content=self.PLAN_PROMPT), 
             HumanMessage(content=state['task'])
         ]
+        print("---------------------------PlanAgent Start-----------------------------------")
+        print("\n")
+        print("PlanAgent 输入:\n", messages)  # 打印输入状态
         response = self.model.invoke(messages)
+        print("\n")
+        print("PlanAgent 输出:\n", response.content)  # 打印输出状态
+        print("---------------------------PlanAgent end-----------------------------------")
         return {"plan": response.content, "lnode": "planner", "count": 1}
