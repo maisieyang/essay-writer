@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["maisieyang <yangxiyuebupt@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.0.3"
+python-dotenv = "^1.0.1"
+langgraph = "^0.2.14"
+langchain-core = "^0.2.35"
+langchain-openai = "^0.1.22"
+tavily-python = "^0.4.0"
+langgraph-checkpoint-sqlite = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
