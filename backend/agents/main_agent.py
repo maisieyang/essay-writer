@@ -63,11 +63,6 @@ class ewriter():
             interrupt_after=['planner', 'generate', 'reflect', 'research_plan', 'research_critique']
         )
 
-        self.graph = builder.compile(
-            checkpointer=memory,
-            interrupt_after=['planner', 'generate']
-        )
-
 
     def should_continue(self, state):
         if state["revision_number"] > state["max_revisions"]:

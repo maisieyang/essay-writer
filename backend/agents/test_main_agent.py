@@ -24,9 +24,10 @@ def test_full_workflow():
     
     # 运行完整的工作流
     for state in writer.graph.stream(initial_state, {"configurable": {"thread_id": "1"}}):
-        print("当前状态:", state)  # 输出每个状态
+        # print("当前状态:", state)  # 输出每个状态
+        pass
 
-    # # 验证最终状态
+    # 验证最终状态
     # final_state = state
     # assert final_state["planner"] != "", "Draft should not be empty"
     # print("test_full_workflow passed!")
