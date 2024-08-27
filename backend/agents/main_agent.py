@@ -59,7 +59,6 @@ class ewriter():
         memory = SqliteSaver(conn=sqlite3.connect(":memory:", check_same_thread=False))
         self.graph = builder.compile(
             checkpointer=memory,
-            interrupt_after=['planner', 'generate', 'reflect', 'research_plan', 'research_critique']
         )
 
 
