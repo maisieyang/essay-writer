@@ -3,7 +3,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 
 class WriterAgent:
     def __init__(self, model=None):
-        self.model = model or ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+        self.model = model or ChatOpenAI(model="gpt-4-turbo", temperature=0)
 
         self.WRITER_PROMPT = ( "你是一名文章助理，任务是撰写出色的三段式文章。"
                               "根据用户的要求和初步提纲，生成最好的文章。"
@@ -27,14 +27,16 @@ class WriterAgent:
 
         print("---------------------------WriterAgent Start-----------------------------------")
         print("\n")
-        print("WriterAgent 输入:\n", messages)  # 打印输入状态
+        print("WriterAgent 输入:\n", )  # 打印输入状态
         print("\n")
+
+        
         
         response = self.model.invoke(messages)
 
   
-        print("PlanAgent 输出:\n", response.content)  # 打印输出状态
-        print("---------------------------WriterAgent end-----------------------------------")
+        print("WriterAgent 输出:\n", response.content)  # 打印输出状态
+        print("---------------------------WriterAgent end-----------------------------------\n")
 
         return {
             "draft": response.content, 

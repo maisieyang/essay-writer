@@ -19,5 +19,5 @@ class PlanAgent:
         response = self.model.invoke(messages)
         print("\n")
         print("PlanAgent 输出:\n", response.content)  # 打印输出状态
-        print("---------------------------PlanAgent end-----------------------------------")
+        print("---------------------------PlanAgent end-----------------------------------\n")
         return {"plan": response.content, "lnode": "planner", "count": 1}

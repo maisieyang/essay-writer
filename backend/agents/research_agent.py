@@ -19,7 +19,7 @@ class ResearchAgent:
         input = [SystemMessage(content=self.RESEARCH_PLAN_PROMPT) , HumanMessage(content=state['task'])]
      
 
-        print("---------------------------ResearchAgent-----------------------------------")
+        print("---------------------------ResearchAgent Start-----------------------------------")
         print("\n")
         print("LLM 输入:\n", input) # 打印输入状态
         queries = self.model.with_structured_output(Queries).invoke(input)
@@ -29,7 +29,9 @@ class ResearchAgent:
         content = state['content'] or []  # add to content
 
         print("\n")
-        print("tavily search 输出:\n", content)  # 打印输出状态
+        # print("tavily search 输出:\n", content)  # 打印输出状态
+
+        print("---------------------------ResearchAgent End-----------------------------------\n")
 
         for q in queries.queries:
             response = self.tavily.search(query=q, max_results=2)
