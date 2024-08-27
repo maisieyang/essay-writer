@@ -14,7 +14,7 @@ def process_task(task):
         "content": [],
         "queries": [],
         "revision_number": 1,
-        "max_revisions": 3,
+        "max_revisions": 2,
         "count": 0
     }
 
@@ -22,9 +22,10 @@ def process_task(task):
     final_state = None
     for state in writer.graph.stream(initial_state, {"configurable": {"thread_id": "1"}}):
         final_state = state  # 保存最终状态
+        
 
     # 返回最终状态中的结果
     if final_state and "draft" in final_state:
         return final_state["draft"]
     else:
-        return "任务执行失败或未生成内容。"
+      return "任务执行失败或未生成内容。"
