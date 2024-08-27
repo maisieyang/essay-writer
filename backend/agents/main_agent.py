@@ -1,8 +1,8 @@
-from plan_agent import PlanAgent
-from research_agent import ResearchAgent
-from writer_agent import WriterAgent
-from reflection_agent import ReflectionAgent
-from critique_agent import CritiqueAgent
+from .plan_agent import PlanAgent
+from .research_agent import ResearchAgent
+from .writer_agent import WriterAgent
+from .reflection_agent import ReflectionAgent
+from .critique_agent import CritiqueAgent
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.sqlite import SqliteSaver
 import sqlite3
@@ -55,7 +55,6 @@ class ewriter():
         builder.add_edge("reflect", "research_critique")
         builder.add_edge("research_critique", "generate")
 
-        builder.add_edge("generate", END)
         
         memory = SqliteSaver(conn=sqlite3.connect(":memory:", check_same_thread=False))
         self.graph = builder.compile(

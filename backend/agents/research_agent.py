@@ -16,6 +16,7 @@ class ResearchAgent:
                                      "最多生成三条搜索查询。")
     
     def run(self, state):
+        
         input = [SystemMessage(content=self.RESEARCH_PLAN_PROMPT) , HumanMessage(content=state['task'])]
      
 

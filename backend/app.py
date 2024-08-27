@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from agent_handler import process_task
 
 app = Flask(__name__)
 
@@ -8,8 +9,9 @@ def chat():
     data = request.json
     message = data.get('message', '')
 
-    # 返回一个简单的响应
-    response = f"Received message: {message}"
+    # 调用独立的函数处理任务
+    response = process_task(message)
+
     return jsonify({'response': response})
 
 if __name__ == '__main__':
