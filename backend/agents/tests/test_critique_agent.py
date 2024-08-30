@@ -1,4 +1,4 @@
-from  critique_agent import CritiqueAgent
+from  ..critique_agent import CritiqueAgent
 from typing import TypedDict, List
 
 from dotenv import load_dotenv

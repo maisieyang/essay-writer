@@ -1,12 +1,12 @@
-from main_agent import ewriter 
+from main_agent import ManagerAgent 
 
 from dotenv import load_dotenv
 load_dotenv()
 
 
 def test_full_workflow():
-    # 初始化 ewriter 实例
-    writer = ewriter()
+    # 初始化 ManagerAgent 实例
+    writer = ManagerAgent()
     # 定义初始状态
     initial_state = {
         "task": "研究人工智能对社会的影响",
