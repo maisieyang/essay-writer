@@ -1,8 +1,8 @@
-from agents.main_agent import ewriter
+from agents.main_agent import ManagerAgent
 
 def process_task(task):
-    # 初始化ewriter实例
-    writer = ewriter()
+    # 初始化ManagerAgent实例
+    writer = ManagerAgent()
 
     # 定义初始状态
     initial_state = {

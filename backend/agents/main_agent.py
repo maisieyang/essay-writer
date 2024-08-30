@@ -26,7 +26,7 @@ class AgentState(TypedDict):
 class Queries(BaseModel):
     queries: List[str]
 
-class ewriter():
+class ManagerAgent():
     def __init__(self):
         self.plan_agent = PlanAgent()
         self.research_agent = ResearchAgent()
