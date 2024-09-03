@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-MODEL = ChatOpenAI(model="gpt-4-turbo", temperature=0)
+MODEL = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 WRITER_PROMPT = ( "你是一名文章助理，任务是撰写出色的三段式文章。"
                               "根据用户的要求和初步提纲，生成最好的文章。"
                               "如果用户提供了反馈，请根据之前的尝试进行修订。"
