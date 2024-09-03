@@ -20,5 +20,5 @@ COPY . .
 EXPOSE 5000
 
 # 启动应用
-CMD ["poetry", "run", "python", "main.py"]
+CMD ["poetry", "run", "python", "app.py"]
 
