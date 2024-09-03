@@ -1,4 +1,4 @@
-from agents.main_agent import ManagerAgent
+from backend.agents.main_agent import ManagerAgent
 
 def process_task(task):
     # 初始化ManagerAgent实例

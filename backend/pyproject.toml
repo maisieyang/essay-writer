@@ -16,6 +16,7 @@ tavily-python = "^0.4.0"
 langgraph-checkpoint-sqlite = "^1.0.0"
 ipython = "^8.26.0"
 langsmith = "^0.1.104"
+gradio = "^4.42.0"
 
 
 [build-system]
