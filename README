@@ -1,0 +1,15 @@
+构建：
+docker compose up --build
+
+
+python main.py  
+python agents/plan_agent.py
+
+如果你想使用相对导入并且确保Python将你的脚本视为一个包的一部分，你需要从包的顶层目录运行脚本。
+
+python -m agents.state_graph
+
+
+
+python3 -m venv venv     
+source venv/bin/activate     
